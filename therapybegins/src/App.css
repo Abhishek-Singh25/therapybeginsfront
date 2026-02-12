@@ -1,0 +1,169 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  line-height: 1.6;
+  background-color: #FAFAFA;
+  color: #2D3436;
+}
+#root{
+  width: 100%;
+}
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.hero{
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right,#e6d9f7 #fdfdfd);
+}
+.hero h1{
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #4a2c82;
+}
+.hero h2{
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #6a4fa3;
+}
+.hero button{
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section h2{
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+section p{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.mainsp{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+.sp{
+  padding: 1.5rem;
+  border: 1px solid gray;
+  border-radius: 7px;
+  text-align: center;
+}
+.acontainer{
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.acontainer button{
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: 1px solid gray;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.cta{
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.cta button{
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: 1px solid gray;
+  border-radius: 7px;
+  cursor: pointer;
+}
+footer{
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: #E5E7EB;
+  color: #4B5563;
+}
+.hero, .cta, footer{
+  width: 100%;
+  margin: 0;
+}
+@media (min-width:768px){
+  .hero h1{
+    font-size: 3rem;
+  }
+  .hero h2{
+    font-size: 1.6rem;
+  }
+  .mainsp{
+    grid-template-columns: repeat(2,1fr);
+  }
+  section p{
+    max-width: 700px;
+    margin: auto;
+  }
+}
+@media (min-width: 1024px){
+  .hero{
+    padding: 6rem 2rem;
+  }
+  .hero h1{
+    font-size: 3.5rem;
+  }
+  .hero h2{
+    font-size: 2rem;
+  }
+  .mainsp{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+.appointment form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.appointment input, .appointment textarea{
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.appointment button{
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.closebtn{
+  position: absolute;
+  margin-left: 30.7rem;
+  margin-top: -3.9rem;
+}
