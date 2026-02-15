@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 
 function Appform({onClose}){
     const [formdata,setFormdata]=useState({
@@ -13,11 +14,16 @@ function Appform({onClose}){
     function hc(e){
         setFormdata({...formdata,[e.target.name]:e.target.value});
     }
-    function hs(e){
+    async function hs(e){
         e.preventDefault();
-        console.log("Form submitted",formdata);
-        alert("Appointment request submitted");
-        onclose();
+        try{
+            const res=await axios.post('http://localhost:5000/appointments',formdata);
+            alert(res.data.message);
+            onClose();
+        }catch(err){
+            console.error(err);
+            alert('Try Again');
+        }
     };
     return<>
     <section className="appointment">

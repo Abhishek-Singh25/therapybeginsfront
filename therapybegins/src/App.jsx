@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import './App.css'
 import Appform from './appform.jsx'
+import FAQ from './faqs.jsx'
+import Pbackground from './pb.jsx'
+import Contact from './contact.jsx'
 
 function Hero(){
   return(
     <section className='hero'>
-      <h1>Live your life in full bloom</h1>
-      <h2>Therapy for aduls in Santa Monica, CA</h2>
-      
-    </section>
+      <h1>Your Journey to Inner Peace Starts Here</h1>
+      <h2>Therapy for adults in Santa Monica, CA</h2>
+      </section>
   )
 }
 function Special(){
@@ -33,14 +35,16 @@ function Special(){
   )
 }
 function About(){
-  return(
+  return<>
+    <img src='/profile pic1.png' alt='Profile Pic' width='200' style={{display:'block', margin:'0 auto'}}/>
     <section className='acontainer'>
       <h2>Hi, I'm Dr. Maya Reynolds, PsyD</h2>
       <p>I'm licensed clinical psychologist based in Santa Monica, California.<br/>I offer therapy for adults who feel overwhelmed by anxiety, stress, or past experiences.<br/>My approach is warm, collaborative, and grounded-integration CBT, EMDR, mindfulness, and body-oriented techniques.</p>
-      <p>Office: 123th Street 45 W, Santa Monica, CA 90401</p>
-      
+      <p><span style={{fontWeight:'bold'}}>Office:</span> 123th Street 45 W, Santa Monica, CA 90401</p>
+      <p style={{marginBottom:'1rem'}}>Hours: Monday-Friday, 10:00-18:00</p>
+      <img src='/office pic.png' alt='Office Pic' width='270'/>     <img src='/office pic1.png' alt='Office Pic' width='270'/>
     </section>
-  )
+    </>
 }
 function CTA(){
   return(
@@ -51,12 +55,13 @@ function CTA(){
   )
 }
 function Footer(){
+  const year=new Date().getFullYear();
   return(
-    <footer>
-      <p>Dr. Maya Reynolds, PsyD</p>
-      <p>123th Street 45 W, Santa Monica, CA 90401</p>
-      <p>email@example.com | (555) 555-5555</p>
-      <p>Hours: Monday-Friday, 10:00-18:00</p>
+    <footer className='footer'>
+        <p>&copy; {year} Dr. Maya Reynolds. All rights reserved.</p>
+        <p>Website developed by Abhishek Singh</p>
+        <p>Email: <a href='mailto:sabhishek52@yahoo.com'>sabhishek52@yahoo.com</a></p>
+        <p>Contact: <a href='tel:+919062047725'>+91 9062047725</a></p>
     </footer>
   )
 }
@@ -65,6 +70,7 @@ function App() {
   const [show,setShow]=useState(false);
   return(
     <>
+    <Contact/>
     <Hero/>
     <Special/>
     <About/>
@@ -77,6 +83,8 @@ function App() {
         <div className="modal-content"><Appform onClose={()=>setShow(false)}/></div>
       </div>
     )}
+    <FAQ/>
+    <Pbackground/>
     <Footer/>
     </>
   )
