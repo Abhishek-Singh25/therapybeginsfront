@@ -17,7 +17,7 @@ function Appform({onClose}){
     async function hs(e){
         e.preventDefault();
         try{
-            const res=await axios.post('http://localhost:5000/appointments',formdata);
+            const res=await axios.post('https://therapybegins-backend.onrender.com/appointments',formdata);
             alert(res.data.message);
             onClose();
         }catch(err){
